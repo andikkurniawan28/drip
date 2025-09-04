@@ -13,6 +13,8 @@ if (file_exists($envFile)) {
     }
 }
 
+$baseUrl = rtrim($_ENV['BASE_URL'], '/');
+
 // 2. Load global config
 require_once __DIR__ . '/config/config.php';
 

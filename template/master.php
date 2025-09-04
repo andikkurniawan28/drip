@@ -1,5 +1,4 @@
 <?php
-$baseUrl = rtrim($_ENV['BASE_URL']);
 $homeActive = $homeActive ?? false;
 $masterActive = $masterActive ?? false;
 $masterShow = $masterShow ?? false;

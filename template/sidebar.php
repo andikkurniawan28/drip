@@ -25,7 +25,7 @@
     <li class="nav-item <?= $masterActive ? 'active' : '' ?>">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#master" aria-expanded="true"
             aria-controls="master">
-            <i class="fas fa-fw fa-cog"></i>
+            <i class="fas fa-fw fa-database"></i>
             <span>Master</span>
         </a>
         <div id="master" class="collapse <?= $masterShow ? 'show' : '' ?>" aria-labelledby="headingTwo" data-parent="#accordionSidebar">

@@ -33,9 +33,59 @@ $(document).ready(function () {
     // Inisialisasi Select2
     $('.select2').select2({
         theme: 'bootstrap4',
-        placeholder: '-- Pilih --',
+        placeholder: '-- Select --',
         allowClear: true,
         width: '100%'
     });
 });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+<?php if(!empty($_SESSION['success'])): ?>
+    Swal.fire({
+        icon: 'success',
+        title: 'Success',
+        text: "<?= addslashes($_SESSION['success']) ?>",
+        timer: 1200,
+        showConfirmButton: false
+    });
+    <?php unset($_SESSION['success']); ?>
+<?php endif; ?>
+
+<?php if(!empty($_SESSION['failed'])): ?>
+    Swal.fire({
+        icon: 'error',
+        title: 'Failed',
+        text: "<?= addslashes($_SESSION['failed']) ?>",
+        timer: 1200,
+        showConfirmButton: false
+    });
+    <?php unset($_SESSION['failed']); ?>
+<?php endif; ?>
+
+<?php if(!empty($_SESSION['error'])): ?>
+    Swal.fire({
+        icon: 'error',
+        title: 'Failed',
+        text: "<?= addslashes($_SESSION['error']) ?>",
+        timer: 1200,
+        showConfirmButton: false
+    });
+    <?php unset($_SESSION['error']); ?>
+<?php endif; ?>
+
+<?php if(!empty($errors) && is_array($errors)): ?>
+    Swal.fire({
+        icon: 'error',
+        title: 'Validation Error',
+        html: `
+            <ul style="text-align:left;">
+                <?php foreach($errors as $error): ?>
+                    <li><?= htmlspecialchars($error) ?></li>
+                <?php endforeach; ?>
+            </ul>
+        `
+    });
+<?php endif; ?>
 </script>
